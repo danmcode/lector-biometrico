@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro </title>
+    <link href="./images/logo.ico">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./js/myjs.js"></script>
+    <script src="./js/push.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="modal-dialog text-center">
+                <div class="main-section">
+                    <div class="modal-content">
+                        <div class="row ">
+                            <div class="col-6 user-img">
+                                <img src="images/logoCom.png" />
+                            </div>
+
+                            <div class="col-6 Banner">
+                                <br>
+                                <strong> <span class="Banner">CONTROL</span>
+                                    <br>
+                                    <span class="Banner">BIOMÉTRICO</span>
+                                </strong>
+                            </div>
+                        </div>
+
+                        <div class="form-inline">
+                            <div class="form-group mx-sm-3 mb-2">
+                                <label for="m" class="sr-only">
+                                    Cedula
+                                </label>
+                                <input type="number" class="form-control" id="inCedula" placeholder="Cedula"
+                                    value=<%=id[0]%>
+                                disabled>
+                            </div>
+                            <div>
+                                <button class="btn btn-primary mb-2" id="register"
+                                    onclick="getIdentification('<%=id%>');">
+                                    Registro biométrico
+                                </button>
+                            </div>
+
+                            <div class="consoleA p-2">
+                                <ul id="arduinoMessage" class="list-group-flush list-unstyled">
+                                </ul>
+                            </div>
+
+
+                        </div>
+                        <button class="btn btn-danger mb-5" onclick="window.close();">
+                            Cerrar ventana
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>
